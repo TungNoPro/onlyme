@@ -134,7 +134,7 @@ end
 
     
   local Section = TabTwo:AddSection({
-    Name = "Auto Craft"
+    Name = "Autos"
 })
 
 TabTwo:AddToggle({
@@ -150,6 +150,23 @@ local args = {
 game:GetService("ReplicatedStorage").PetSystem.PetInventoryHandler:FireServer(unpack(args))
 wait(0)
 	end    
+end
+})
+
+TabTwo:AddToggle({
+	Name = "Auto Equip Best",
+	Default = false,
+	Callback = function(Value)
+	_G.autoEquip = Value
+        while _G.autoEquip and wait() do
+local args = {
+    [object] = object
+    [object] = object
+}
+
+game:GetService("ReplicatedStorage").PetSystem.PetInventoryHandler:FireServer(unpack(args))
+wait(0)
+end
 end
 })
     
