@@ -153,22 +153,6 @@ wait(0)
 end
 })
 
-TabTwo:AddToggle({
-	Name = "Auto Equip Best",
-	Default = false,
-	Callback = function(Value)
-	_G.autoEquip = Value
-        while _G.autoEquip and wait() do
-local args = {
-    [object] = object
-    [object] = object
-}
-
-game:GetService("ReplicatedStorage").PetSystem.PetInventoryHandler:FireServer(unpack(args))
-wait(0)
-end
-end
-})
     
 local Section = TabTwo:AddSection({
     Name = "Auto Hatch Fast"
