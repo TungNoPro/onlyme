@@ -133,8 +133,25 @@ for i, v in pairs(game:GetService("Workspace").BillboardGuis:GetChildren()) do
 end
 
     
-  
+  local Section = TabTwo:AddSection({
+    Name = "Auto Craft"
+})
 
+TabTwo:AddToggle({
+	Name = "Auto Craft",
+	Default = false,
+	Callback = function(Value)
+	_G.autoCraft = Value
+        while _G.autoCraft and wait() do
+local args = {
+    [1] = "CraftAll"
+}
+
+game:GetService("ReplicatedStorage").PetSystem.PetInventoryHandler:FireServer(unpack(args))
+wait(0)
+	end    
+end
+})
     
 local Section = TabTwo:AddSection({
     Name = "Auto Hatch Fast"
